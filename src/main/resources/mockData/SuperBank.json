@@ -1,0 +1,59 @@
+{
+  "transactions": [
+    {
+      "transactionId": "TXN5001",
+      "username": "thabo.mokoena",
+      "bank": "Super Bank",
+      "accountNumber": "4455667788",
+      "amount": -180.0,
+      "currency": "ZAR",
+      "transactionDate": "2025-10-12T09:00:00+02:00",
+      "description": "Lunch - Wimpy",
+      "category": "Dining"
+    },
+    {
+      "transactionId": "TXN5002",
+      "username": "sibongile.ndlovu",
+      "bank": "Super Bank",
+      "accountNumber": "9988776655",
+      "amount": -300.0,
+      "currency": "ZAR",
+      "transactionDate": "2025-10-12T15:30:00+02:00",
+      "description": "Clothing Store - Foschini",
+      "category": "Shopping"
+    },
+    {
+      "transactionId": "TXN5003",
+      "username": "johan.vanrensburg",
+      "bank": "Super Bank",
+      "accountNumber": "3344556677",
+      "amount": 4500.0,
+      "currency": "ZAR",
+      "transactionDate": "2025-10-13T10:00:00+02:00",
+      "description": "Consulting Fee - IT Services",
+      "category": "Income"
+    },
+    {
+      "transactionId": "TXN5004",
+      "username": "lerato.molefe",
+      "bank": "Super Bank",
+      "accountNumber": "7766554433",
+      "amount": -220.0,
+      "currency": "ZAR",
+      "transactionDate": "2025-10-13T18:45:00+02:00",
+      "description": "Dinner - Ocean Basket",
+      "category": "Dining"
+    },
+    {
+      "transactionId": "TXN5005",
+      "username": "kevin.naidoo",
+      "bank": "Super Bank",
+      "accountNumber": "6677889900",
+      "amount": -500.0,
+      "currency": "ZAR",
+      "transactionDate": "2025-10-14T07:30:00+02:00",
+      "description": "Medical Aid Payment - Discovery",
+      "category": "Health"
+    }
+  ]
+}

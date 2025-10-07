@@ -1,0 +1,59 @@
+{
+  "transactions": [
+    {
+      "transactionId": "TXN4001",
+      "username": "thabo.mokoena",
+      "bank": "Capital Bank",
+      "accountNumber": "1239874560",
+      "amount": -299.99,
+      "currency": "ZAR",
+      "transactionDate": "2025-10-09T10:20:00+02:00",
+      "description": "Takealot Purchase - Electronics",
+      "category": "Shopping"
+    },
+    {
+      "transactionId": "TXN4002",
+      "username": "sibongile.ndlovu",
+      "bank": "Capital Bank",
+      "accountNumber": "9988123456",
+      "amount": -150.0,
+      "currency": "ZAR",
+      "transactionDate": "2025-10-09T13:45:00+02:00",
+      "description": "Hair Salon - Beauty Express",
+      "category": "Personal Care"
+    },
+    {
+      "transactionId": "TXN4003",
+      "username": "johan.vanrensburg",
+      "bank": "Capital Bank",
+      "accountNumber": "7766554433",
+      "amount": -89.0,
+      "currency": "ZAR",
+      "transactionDate": "2025-10-10T08:00:00+02:00",
+      "description": "Parking Fee - Sandton City",
+      "category": "Travel"
+    },
+    {
+      "transactionId": "TXN4004",
+      "username": "lerato.molefe",
+      "bank": "Capital Bank",
+      "accountNumber": "1122446688",
+      "amount": 2000.0,
+      "currency": "ZAR",
+      "transactionDate": "2025-10-10T17:30:00+02:00",
+      "description": "Freelance Payment - Photography",
+      "category": "Income"
+    },
+    {
+      "transactionId": "TXN4005",
+      "username": "kevin.naidoo",
+      "bank": "Capital Bank",
+      "accountNumber": "3344556677",
+      "amount": -65.0,
+      "currency": "ZAR",
+      "transactionDate": "2025-10-11T12:10:00+02:00",
+      "description": "Uber Ride - Pretoria CBD",
+      "category": "Travel"
+    }
+  ]
+}

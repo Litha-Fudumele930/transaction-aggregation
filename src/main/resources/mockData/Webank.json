@@ -1,0 +1,59 @@
+{
+  "transactions": [
+    {
+      "transactionId": "TXN3001",
+      "username": "thabo.mokoena",
+      "bank": "WeBank",
+      "accountNumber": "1234567890",
+      "amount": 1250.75,
+      "currency": "ZAR",
+      "transactionDate": "2025-10-01T09:15:00+02:00",
+      "description": "Grocery Store - Checkers",
+      "category": "Groceries"
+    },
+    {
+      "transactionId": "TXN3002",
+      "username": "sibongile.ndlovu",
+      "bank": "WeBank",
+      "accountNumber": "9876543210",
+      "amount": -450.0,
+      "currency": "ZAR",
+      "transactionDate": "2025-10-02T14:30:00+02:00",
+      "description": "Electricity Bill - Eskom",
+      "category": "Utilities"
+    },
+    {
+      "transactionId": "TXN3003",
+      "username": "johan.vanrensburg",
+      "bank": "WeBank",
+      "accountNumber": "1122334455",
+      "amount": 3200.0,
+      "currency": "ZAR",
+      "transactionDate": "2025-10-03T11:00:00+02:00",
+      "description": "Salary Deposit",
+      "category": "Income"
+    },
+    {
+      "transactionId": "TXN3004",
+      "username": "lerato.molefe",
+      "bank": "WeBank",
+      "accountNumber": "5566778899",
+      "amount": -120.0,
+      "currency": "ZAR",
+      "transactionDate": "2025-10-04T16:45:00+02:00",
+      "description": "Netflix Subscription",
+      "category": "Entertainment"
+    },
+    {
+      "transactionId": "TXN3005",
+      "username": "kevin.naidoo",
+      "bank": "WeBank",
+      "accountNumber": "6677889900",
+      "amount": -980.0,
+      "currency": "ZAR",
+      "transactionDate": "2025-10-05T08:20:00+02:00",
+      "description": "Flight Booking - Mango Airlines",
+      "category": "Travel"
+    }
+  ]
+}

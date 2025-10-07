@@ -65,7 +65,7 @@
         <checkstyle.version>10.3.2</checkstyle.version>
         <nohttp-checkstyle.version>0.0.10</nohttp-checkstyle.version>
         <git-commit-id-plugin.version>5.0.0</git-commit-id-plugin.version>
-        <modernizer-maven-plugin.version>2.4.0</modernizer-maven-plugin.version>
+        <modernizer-maven-plugin.version>2.6.0</modernizer-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
         <jib-maven-plugin.version>3.2.1</jib-maven-plugin.version>
         <jib-maven-plugin.image>eclipse-temurin:11-jre-focal</jib-maven-plugin.image>
@@ -254,6 +254,10 @@
             <artifactId>metrics-core</artifactId>
         </dependency>
         <!-- jhipster-needle-maven-add-dependency -->
+        <dependency>
+            <groupId>io.zipkin.brave</groupId>
+            <artifactId>brave</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -686,6 +690,23 @@
                                 <configOptions>
                                     <delegatePattern>true</delegatePattern>
                                     <title>transaction-aggregation</title>
+                                </configOptions>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>Registry</id>
+                            <goals>
+                                <goal>generate</goal>
+                            </goals>
+                            <configuration>
+                                <inputSpec>${project.basedir}/src/main/resources/swagger/authRegistry.yml
+                                </inputSpec>
+                                <generatorName>spring</generatorName>
+                                <apiPackage>com.mycompany.myapp.client</apiPackage>
+                                <modelPackage>com.mycompany.myapp.service.api.dto.authRegistry</modelPackage>
+                                <configOptions>
+                                    <interfaceOnly>true</interfaceOnly>
+                                    <library>spring-cloud</library>
                                 </configOptions>
                             </configuration>
                         </execution>

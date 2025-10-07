@@ -92,7 +92,11 @@ jhipster:
 # https://www.jhipster.tech/common-application-properties/
 # ===================================================================
 
-# application:
+application:
+  authRegistry:
+    url: http://localhost:8761
+    feignClientName: jhipsterRegistry
+
 management:
   health:
     mail:

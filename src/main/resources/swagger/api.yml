@@ -9,15 +9,174 @@ servers:
     description: Development server
   - url: https://localhost:8081/api
     description: Development server with TLS Profile
-paths: {}
-components:
-  responses:
-    Problem:
-      description: error occurred - see status code and problem object for more information.
-      content:
-        'application/problem+json':
+
+paths:
+  /auth/login:
+    post:
+      tags: [auth]
+      summary: Authenticate user and return access token
+      operationId: authenticateUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Successful login
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        '401':
+          description: Invalid credentials
+
+  /transactions:
+    get:
+      tags: [transactions]
+      summary: retrieve all transaction
+      operationId: getAllTransactions
+      description: Retrieve transactions by date range and category
+      parameters:
+        - name: user
+          in: query
+          description: the customer name
           schema:
-            $ref: 'https://opensource.zalando.com/problem/schema.yaml#/Problem'
+            type: string
+        - name: startDate
+          in: query
+          description: Optional start date in YYYY-MM-DD format
+          schema:
+            type: string
+            format: date
+        - name: endDate
+          in: query
+          description: Optional end datein YYYY-MM-DD format
+          schema:
+            type: string
+            format: date
+        - name: category
+          in: query
+          description: The transaction category
+          schema:
+            type: string
+        - name: page
+          in: query
+          description: the page number
+          schema:
+            type: integer
+            format: int32
+        - name: size
+          in: query
+          description: how many records to return
+          schema:
+            type: integer
+            format: int32
+
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransactionResponse'
+        '400':
+          description: client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    LoginRequest:
+      type: object
+      required:
+        - username
+        - password
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+
+    LoginResponse:
+      type: object
+      properties:
+        accessToken:
+          type: string
+        tokenType:
+          type: string
+          example: jwt
+
+    TransactionResponse:
+      type: object
+      properties:
+        transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/TransactionListResponse'
+        pagination:
+          type: object
+          properties:
+            page:
+              type: number
+            size:
+              type: number
+            totalPages:
+              type: number
+            totalItems:
+              type: number
+
+    TransactionListResponse:
+      type: object
+      properties:
+        transactionId:
+          type: string
+          description: transaction Identifier
+        username:
+          type: string
+          description: The customer name
+        bank:
+          type: string
+          description: the Bank used
+        accountNumber:
+          type: string
+          description: the Account number
+        amount:
+          type: number
+          description: The transaction amount
+        currency:
+          type: string
+          description: The transaction currency
+        transactionDate:
+          type: string
+          description: The transaction date
+        description:
+          type: string
+          description: The transaction description
+        category:
+          type: string
+          description: The transaction Category
+
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
 
   securitySchemes:
     jwt:

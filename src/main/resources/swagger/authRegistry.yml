@@ -1,0 +1,64 @@
+# API-first development with OpenAPI
+# This file will be used at compile time to generate Spring-MVC endpoint stubs using openapi-generator
+openapi: '3.0.1'
+info:
+  title: 'Registry'
+  version: 0.0.1
+servers:
+  - url: http://localhost:8761/api
+    description: Development server
+  - url: https://localhost:8761/api
+    description: Development server with TLS Profile
+
+paths:
+  /api/authenticate:
+    post:
+      tags: [auth]
+      summary: Authenticate user and return access token
+      operationId: getAuthToken
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenRequest'
+      responses:
+        '200':
+          description: Successful login
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenResponse'
+        '401':
+          description: Bad credentials
+
+components:
+  schemas:
+    TokenRequest:
+      type: object
+      required:
+        - username
+        - password
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+
+    TokenResponse:
+      type: object
+      properties:
+        id_token:
+          type: string
+
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
