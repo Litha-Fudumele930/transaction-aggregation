@@ -3,7 +3,11 @@
 This application was generated using JHipster 7.9.4, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v7.9.4](https://www.jhipster.tech/documentation-archive/v7.9.4).
 
 This is a "microservice" application intended to be part of a microservice architecture, please refer to the [Doing microservices with JHipster][] page of the documentation for more information.
-This application is configured for Service Discovery and Configuration with the JHipster-Registry. On launch, it will refuse to start if it is not able to connect to the JHipster-Registry at [http://localhost:8761](http://localhost:8761). For more information, read our documentation on [Service Discovery and Configuration with the JHipster-Registry][].
+This application is configured for Service Discovery and Configuration with the JHipster-Registry. On launch, it will refuse to start if it is not able to connect to the JHipster-Registry at [http://localhost:8761](http://localhost:8761). in the project there is a docker directory in src/main from there you can run :
+
+```
+docker-compose -f jhipster-registry.yml up
+```
 
 ## Project Structure
 
@@ -27,6 +31,20 @@ To start your application in the dev profile, run:
 ```
 ./mvnw
 ```
+
+alternatively:
+
+# Build the Docker image
+
+docker build -t transaction-aggregation .
+
+# Run the container
+
+docker run -p 8081:8081 transaction-aggregation
+
+2 apis exist in the project Post /auth/login with json request username and password to get the bearer token and Get /transactions for transactions with query params: user, startDate, endDate, category, page and size
+
+the credentials are: admin and admin
 
 For further instructions on how to develop with JHipster, have a look at [Using JHipster in development][].
 
